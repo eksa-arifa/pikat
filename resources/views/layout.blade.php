@@ -71,7 +71,7 @@ Coded by www.creative-tim.com
         </ul>
       </div>
     </div>
-    <div class="main-panel" style="height: 100vh;">
+    <div class="main-panel" style="height: 100vh;overflow-y:auto">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
         <div class="container-fluid">

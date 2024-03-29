@@ -3,6 +3,7 @@
 @section('content')
 <div class="d-flex gap-3 flex-wrap justify-content-center">
 
+    @if($posts->count() != 0)
     @foreach($posts as $post)
     
     
@@ -13,6 +14,11 @@
             
         </div>
         @endforeach
+        @else
+        <div>
+            Posts kosong
+        </div>
+        @endif
     </div>
     {{$posts->links()}}
     @endsection

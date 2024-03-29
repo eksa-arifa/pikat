@@ -142,6 +142,7 @@
       <div class="container">
 
         <div class="row gy-4">
+          @if ($posts->count() != 0)
           @foreach ($posts as $post)
               
           <div class="col-xl-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
@@ -167,6 +168,9 @@
           </div><!-- End post list item -->
           
           @endforeach
+          @else
+          <div class="text-center">Nothing</div>
+          @endif
 
         </div><!-- End recent posts list -->
 
