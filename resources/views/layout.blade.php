@@ -248,6 +248,8 @@ Coded by www.creative-tim.com
     }
   }
 </script>
+
+@yield('script')
 </body>
 
 </html>

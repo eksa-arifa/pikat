@@ -93,9 +93,26 @@ class PostController extends Controller
     {
         $title = "Posts";
 
-        $posts = Post::inRandomOrder()->paginate(10);
+        $posts = Post::orderBy("created_at", "desc")->paginate(12);
 
         return view("app.posts.latest", compact("title", "posts"));
+    }
+
+    public function postsInfiniteScroll(Request $request)
+    {
+        try{
+            $posts = Post::orderBy("created_at", "desc")->paginate(12);
+
+            if(!$posts){
+                throw new Exception();
+            }
+
+            return response()->json([
+                "posts" => $posts
+            ]);
+        }catch(Exception $e){
+            return false;
+        }
     }
 
     public function likePost(Request $request){

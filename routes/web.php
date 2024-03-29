@@ -49,6 +49,7 @@ Route::controller(PostController::class)->group(function(){
     Route::middleware("auth")->group(function(){
         Route::prefix("/allposts")->group(function(){
             Route::get("/", "posts")->name("latest");
+            Route::post("/", "postsInfiniteScroll")->name("infiniteScroll");
         });
         Route::post('postinsert', 'postInsert')->name("postinsert");
 

@@ -15,7 +15,7 @@
     </div>
     <div class="mb-3">
         <label for="pfp" class="form-label">Profile Picture:</label>
-        <input type="file" name="pfp" class="form-control w-50" id="formfile">
+        <input type="file" name="pfp" class="form-control w-50" id="formfile" accept="image/png, image/jpg, image/jpeg">
         <img src="{{(auth()->user()->pfp != "")?'/pfp/'.auth()->user()->pfp:'/assets/img/default-avatar.png'}}" alt="pfp" width="50" height="50" class="rounded-circle mt-2 object-fit-cover">
     </div>
     
