@@ -103,7 +103,10 @@ Coded by www.creative-tim.com
                     Add Post
                   </button>                  
                   <a class="btn btn-primary" href="{{route("profile")}}">Profile</a>
+                  @if (auth()->user()->role == "admin")
+                      
                   <a class="btn btn-primary" href="/admin">Administrator</a>
+                  @endif
                   <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#logout">
                     Logout
                   </button>                  
