@@ -28,6 +28,11 @@ class User extends Authenticatable
         'bio'
     ];
 
+    protected $attributes = [
+        'pfp' => "",
+        'bio' => "Not Yet"
+    ];
+
     /**
      * The attributes that should be hidden for serialization.
      *

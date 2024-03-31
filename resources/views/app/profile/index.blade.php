@@ -10,7 +10,11 @@
       <div class="author">
         <a href="#">
           <img class="avatar border-gray object-fit-cover" src="{{($user->pfp != "")?'/pfp/'.$user->pfp:'/assets/img/default-avatar.png'}}" alt="...">
-          <h5 class="title">{{$user->name}}</h5>
+          <h5 class="title">{{$user->name}}
+          @if ($user->role == "admin")
+          <i class="fa-solid fa-circle-check"></i>
+          @endif
+          </h5>
         </a>
         <p class="description">
           {{$user->email}}

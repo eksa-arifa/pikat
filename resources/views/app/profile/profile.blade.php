@@ -10,7 +10,11 @@
       <div class="author">
         <a href="#">
           <img class="avatar border-gray object-fit-cover" src="{{(auth()->user()->pfp != "")?'/pfp/'.auth()->user()->pfp:'/assets/img/default-avatar.png'}}" alt="...">
-          <h5 class="title">{{auth()->user()->name}}</h5>
+          <h5 class="title">{{auth()->user()->name}}
+          @if (auth()->user()->role == "admin")
+          <i class="fa-solid fa-circle-check"></i>
+          @endif
+          </h5>
         </a>
         <p class="description">
           {{auth()->user()->email}}

@@ -33,7 +33,12 @@
                       <div class="candidate-list-details">
                         <div class="candidate-list-info">
                           <div class="candidate-list-title">
-                            <h5 class="mb-0"><a href="{{route("profileGet", ["id"=>$item->id])}}">{{$item->name}}</a></h5>
+                            <h5 class="mb-0"><a href="{{route("profileGet", ["id"=>$item->id])}}">{{$item->name}} 
+                              @if ($item->role == "admin")
+                              <i class="fa-solid fa-circle-check"></i>
+                                  
+                              @endif
+                            </a></h5>
                           </div>
                         </div>
                       </div>

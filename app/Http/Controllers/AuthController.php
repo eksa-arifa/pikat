@@ -28,6 +28,8 @@ class AuthController extends Controller
             "email" => "required|email",
             "password" => "required"
         ]);
+
+        
         
         if(Auth::attempt($validate)){
             return redirect()->route("latest")->with("success", "Berhasil Login");

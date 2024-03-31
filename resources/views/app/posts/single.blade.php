@@ -15,7 +15,11 @@
         <div class="card col-md-6 col-sm-10" style="height: fit-content;">
             <div class="d-flex align-items-center gap-3 p-2">
                 <img src="{{($post->user->pfp == "")?'/assets/img/default-avatar.png':'/pfp/'.$post->user->pfp}}" class="rounded-circle object-fit-cover" width="50" height="50" alt="...">
-                <a href="{{route('profileGet', ["id"=>$post->user->id])}}" class="fw-bold">{{$post->user->name}}</a>
+                <a href="{{route('profileGet', ["id"=>$post->user->id])}}" class="fw-bold">{{$post->user->name}}
+                @if ($post->user->role == "admin")
+                <i class="fa-solid fa-circle-check"></i>
+                @endif
+                </a>
             </div>
             <img src="{{ asset('storage/posts') . '/' . $post->post_image }}" class="card-img-top" alt="...">
             <div class="card-body">
@@ -45,7 +49,11 @@
                                 <div class="d-flex justify-content-between w-100">
                                     <div class="d-flex align-items-center gap-2">
                                         <img src="{{($item->user->pfp == "")?'/assets/img/default-avatar.png':'/pfp/'.$item->user->pfp}}" width="18">
-                                        <a class="text2 text-dark" href="{{route('profileGet', ["id" => $item->user->id])}}">{{$item->user->name}}</a>
+                                        <a class="text2 text-dark" href="{{route('profileGet', ["id" => $item->user->id])}}">{{$item->user->name}}
+                                        @if ($item->user->role == "admin")
+                                        <i class="fa-solid fa-circle-check"></i>
+                                        @endif
+                                        </a>
                                     </div>
                                     <span class="">{{ $item->created_at->diffForHumans() }}</span>
                                 </div>

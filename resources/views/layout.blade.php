@@ -103,6 +103,7 @@ Coded by www.creative-tim.com
                     Add Post
                   </button>                  
                   <a class="btn btn-primary" href="{{route("profile")}}">Profile</a>
+                  <a class="btn btn-primary" href="/admin">Administrator</a>
                   <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#logout">
                     Logout
                   </button>                  
