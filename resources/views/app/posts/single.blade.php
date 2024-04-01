@@ -36,7 +36,7 @@
                 <img src="{{($post->user->pfp == "")?'/assets/img/default-avatar.png':'/pfp/'.$post->user->pfp}}" class="rounded-circle object-fit-cover" width="50" height="50" alt="...">
                 <a href="{{route('profileGet', ["id"=>$post->user->id])}}" class="fw-bold">{{$post->user->name}}
                 @if ($post->user->role == "admin")
-                <i class="fa-solid fa-circle-check"></i>
+                <x-labels.admin/>
                 @endif
                 </a>
             </div>
@@ -54,7 +54,9 @@
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <span class="fs-6">Uploaded {{$post->created_at->diffForHumans()}}</span>
-                    <button class="btn btn-success">Download</button>
+                    <form action="{{route('downloadimage', ["id"=>$post->id])}}">
+                        <button class="btn btn-success">Download</button>
+                    </form>
                 </li>
               </ul>
             
@@ -74,15 +76,15 @@
                                         <img src="{{($item->user->pfp == "")?'/assets/img/default-avatar.png':'/pfp/'.$item->user->pfp}}" width="18">
                                         <a class="text2 text-dark" href="{{route('profileGet', ["id" => $item->user->id])}}">{{$item->user->name}}
                                         @if ($item->user->role == "admin")
-                                        <i class="fa-solid fa-circle-check"></i>
+                                        <x-labels.admin/>
                                         @endif
                                         </a>
                                     </div>
-                                    <span class="">{{ $item->created_at->diffForHumans() }}</span>
+                                    <span>{{ $item->created_at->diffForHumans() }}</span>
                                 </div>
                             </div>
                         </div>
-                        <span class="text1">{{$item->comment}}</span>
+                        <span class="text1" style="word-break: break-all">{{$item->comment}}</span>
                     </div>
                 </div>
                 @endforeach

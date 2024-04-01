@@ -144,7 +144,7 @@ Coded by www.creative-tim.com
               <label for="post_image" class="form-label">Post Image:</label>
               <input type="file" class="form-control" id="post_image" name="post_image">
             </div>
-            <img class="imgpreview" alt="" class="w-100 object-fit-cover" style="height: 200px">
+            <img class="imgpreview" src="./assets/img/default-avatar.png" alt="" class="w-100 object-fit-cover" style="height: 200px">
             <div class="mb-3">
               <label for="post_desc" class="form-label">Post Description:</label>
               <textarea required name="post_description" id="post_desc" cols="30" rows="10" class="form-control"></textarea>
@@ -163,11 +163,11 @@ Coded by www.creative-tim.com
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Konfirmasi Logout</h1>
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Logout</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Kamu Yakin?
+          Are you sure?
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

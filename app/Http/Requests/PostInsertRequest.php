@@ -26,7 +26,7 @@ class PostInsertRequest extends FormRequest
     {
         return [
             "post_image" => "required|image|mimes:png,jpg,jpeg|max:6000",
-            "post_description" => "required"
+            "post_description" => "required|max:50"
         ];
     }
 }

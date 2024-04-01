@@ -12,7 +12,7 @@
           <img class="avatar border-gray object-fit-cover" src="{{($user->pfp != "")?'/pfp/'.$user->pfp:'/assets/img/default-avatar.png'}}" alt="...">
           <h5 class="title">{{$user->name}}
           @if ($user->role == "admin")
-          <i class="fa-solid fa-circle-check"></i>
+          <x-labels.admin/>
           @endif
           </h5>
         </a>

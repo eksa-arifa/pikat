@@ -35,7 +35,7 @@
                           <div class="candidate-list-title">
                             <h5 class="mb-0"><a href="{{route("profileGet", ["id"=>$item->id])}}">{{$item->name}} 
                               @if ($item->role == "admin")
-                              <i class="fa-solid fa-circle-check"></i>
+                              <x-labels.admin/>
                                   
                               @endif
                             </a></h5>

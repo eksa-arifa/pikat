@@ -56,6 +56,7 @@ Route::controller(PostController::class)->group(function(){
         
         Route::prefix("/post")->group(function(){
             Route::get("/{id}", "singlePost")->name("spesificPost");
+            Route::get("/imgdownload/{id}", "downloadImage")->name("downloadimage");
             
             
             Route::post("/delete", "deletePost")->name("deletepost");

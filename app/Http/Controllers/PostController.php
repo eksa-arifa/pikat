@@ -158,7 +158,7 @@ class PostController extends Controller
 
     public function commentPost(Request $request){
         $request->validate([
-            "comment" => "required|max:200"
+            "comment" => "required|max:50"
         ]);
 
         try{
@@ -175,6 +175,21 @@ class PostController extends Controller
             }
         }catch(Exception $e){
             echo $e;
+        }
+    }
+
+    public function downloadImage($id)
+    {
+        try{
+            $posts = Post::find($id);
+
+            if(!$posts){
+                throw new Exception("Gambar tidak ditemukan");
+            }
+
+            return Storage::download('posts/'.$posts->post_image, now());
+        }catch(Exception $e){
+            return redirect()->back();
         }
     }
 }
