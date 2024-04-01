@@ -144,6 +144,7 @@ Coded by www.creative-tim.com
               <label for="post_image" class="form-label">Post Image:</label>
               <input type="file" class="form-control" id="post_image" name="post_image">
             </div>
+            <img class="imgpreview" alt="" class="w-100 object-fit-cover" style="height: 200px">
             <div class="mb-3">
               <label for="post_desc" class="form-label">Post Description:</label>
               <textarea required name="post_description" id="post_desc" cols="30" rows="10" class="form-control"></textarea>
@@ -251,6 +252,19 @@ Coded by www.creative-tim.com
       }
     }
   }
+</script>
+
+<script>
+    const inputFile = document.getElementById("post_image")
+    const preview = document.querySelector(".imgpreview")
+
+    inputFile.onchange = ()=>{
+        const [file] = inputFile.files
+
+        if(file){
+            preview.src = URL.createObjectURL(file)
+        }
+    }
 </script>
 
 @yield('script')

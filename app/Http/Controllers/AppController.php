@@ -19,7 +19,7 @@ class AppController extends Controller
     {
         $title = "Profile";
 
-        $posts = Post::where("user_id", Auth::user()->id)->paginate(6);
+        $posts = Post::where("user_id", Auth::user()->id)->orderBy("created_at", "desc")->paginate(6);
 
         $countpost = Post::where("user_id", Auth::user()->id)->count();
 
@@ -144,7 +144,7 @@ class AppController extends Controller
                     throw new Exception();
                 }
 
-                $posts = Post::where("user_id", $id)->paginate(6);
+                $posts = Post::where("user_id", $id)->orderBy("created_at", "desc")->paginate(6);
                 
                 if(!$posts){
                     throw new Exception();
