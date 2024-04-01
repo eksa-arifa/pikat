@@ -73,7 +73,7 @@
                             <div class="w-100">
                                 <div class="d-flex justify-content-between w-100">
                                     <div class="d-flex align-items-center gap-2">
-                                        <img src="{{($item->user->pfp == "")?'/assets/img/default-avatar.png':'/pfp/'.$item->user->pfp}}" width="18">
+                                        <img src="{{($item->user->pfp == "")?'/assets/img/default-avatar.png':'/pfp/'.$item->user->pfp}}" width="18" height="18" class="object-fit-cover">
                                         <a class="text2 text-dark" href="{{route('profileGet', ["id" => $item->user->id])}}">{{$item->user->name}}
                                         @if ($item->user->role == "admin")
                                         <x-labels.admin/>

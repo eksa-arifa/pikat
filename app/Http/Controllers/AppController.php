@@ -8,8 +8,10 @@ use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
 use Exception;
+use Illuminate\Http\Request as HttpRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 
 class AppController extends Controller
@@ -157,5 +159,20 @@ class AppController extends Controller
         }else{
             return redirect()->route('profile');
         }
+    }
+
+    public function search(HttpRequest $request)
+    {
+       try{
+        $title = "Search";
+        $search = $request->query("search");
+
+        $users = User::where("name", "like", "%".$search."%")->paginate(10);
+        $posts = Post::where("description", "like", "%".$search."%")->paginate(8);
+
+        return view("search", compact("users", "posts", "title"));
+       }catch(Exception $e){
+        return redirect()->back()->with("error", $e);
+       }
     }
 }

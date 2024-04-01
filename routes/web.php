@@ -42,6 +42,8 @@ Route::controller(AppController::class)->group(function(){
             Route::get("/", "categories")->name("categories");
             Route::get("/{id}", "categoryDetail")->name("categoryDetail");
         });
+
+        Route::get("/search", "search")->name("search");
     });
 });
 
@@ -64,11 +66,5 @@ Route::controller(PostController::class)->group(function(){
             Route::post("commentpost", "commentPost")->name("commentpost");
         });
 
-    });
-});
-
-Route::controller(GetUserController::class)->group(function(){
-    Route::prefix("/users")->group(function(){
-        Route::get("/", "getAllUsers")->name("getAllUsers");
     });
 });

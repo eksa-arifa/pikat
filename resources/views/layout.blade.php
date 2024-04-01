@@ -62,12 +62,12 @@ Coded by www.creative-tim.com
               <p>Posts</p>
             </a>
           </li>
-          <li class="{{($title == "Users")?"active":""}}">
+          {{-- <li class="{{($title == "Users")?"active":""}}">
             <a href="{{route("getAllUsers")}}">
               <i class="fa-solid fa-user"></i>
               <p>Users</p>
             </a>
-          </li>
+          </li> --}}
         </ul>
       </div>
     </div>
@@ -85,6 +85,12 @@ Coded by www.creative-tim.com
             </div>
             <a class="navbar-brand" href="javascript:;">{{$title}}</a>
           </div>
+          <form action="{{route("search")}}" class="d-flex align-items-center">
+            <input required type="text" placeholder="Search Anything..." class="form-control" style="height: 40px" name="search">
+            <button type="submit" class="btn btn-success">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
