@@ -61,7 +61,7 @@
               </ul>
             
         </div>
-        <div style="width: 500px; background:white; box-shadow: 0 0 2px rgba(0,0,0,0.5);" class="ml-3 p-3">
+        <div style="width: 500px; background:white; box-shadow: 0 0 2px rgba(0,0,0,0.5); height: 600px" class="ml-3 p-3">
             <div class="w-100 p-3" style="height: 90%; overflow-y:auto">
                 @if (count($post->comments) != 0)
                     
@@ -94,8 +94,8 @@
             </div>
             <form action="{{route('commentpost', ["post_id" => $post->id])}}" method="post">
                 @csrf
-                <div class="d-flex gap-3">
-                    <input type="text" name="comment" class="form-control">
+                <div class="d-flex gap-3 align-items-center">
+                    <input type="text" name="comment" class="form-control" style="height: 40px">
                     <button type="submit" class="btn btn-primary">Send</button>
                 </div>            
             </form>

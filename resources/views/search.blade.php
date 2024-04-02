@@ -14,10 +14,6 @@
             
         </div>
         @endforeach
-        @else
-        <div>
-            Posts tidak ditemukan
-        </div>
         @endif
     </div>
 
@@ -37,9 +33,11 @@
         </div>
     </div>
     @endforeach
-    @else
-    <div>
-        Tidak ada user yang cocok
-    </div>
+    @endif
+
+    @if ($users->count() == 0 && $posts->count() == 0)
+        <div class="text-center">
+            Tidak menemukan apapun
+        </div>
     @endif
 @endsection
